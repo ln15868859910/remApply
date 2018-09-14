@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 640) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+          }
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+   // import layOutRem from './src/js/layOutRem.js'
+  </script>
+
+  <title>mypro</title>
+
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>
+<style>
+  html {
+    font-size: 100px;
+    height: 100%;
+  }
+
+  body {
+    width: 6.4rem;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  body,
+  table,
+  td,
+  div,
+  p,
+  ol,
+  ul,
+  li,
+  dl,
+  dt,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  form,
+  a,
+  i,
+  object,
+  input,
+  button,
+  table,
+  select,
+  option,
+  textarea {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+  }
+</style>
+
+<!-- <script>
+
+  fnResize()
+
+  window.onresize = function () {
+
+  fnResize()
+
+  }
+
+  function fnResize() {
+
+  var deviceWidth = document.documentElement.clientWidth || window.innerWidth
+
+  if (deviceWidth >= 750) {
+
+  deviceWidth = 750
+
+  }
+
+  if (deviceWidth <= 320) {
+
+  deviceWidth = 320
+
+  }
+
+  document.documentElement.style.fontSize = (deviceWidth / 7.5) + 'px'
+
+  }
+
+  </script> -->
